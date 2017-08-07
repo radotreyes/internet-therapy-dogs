@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  	<div class="container">
+  		<div class="title page-header text-center"><h1>Internet Therapy Dog Generator</h1></div>
+  		<div class="display">
+  			<div id="debug"><h3>DEBUG</h3>
+  				<p></p>
+  				<h5></h5>
+  				</div>
+  			<br>
+  			<div id="gif"></div>
+  			<br>
+  			<button id="refreshImg" class="btn btn-primary">Click for borks</button>
+  			<br>
+  			<div id="desc"></div>
+  		</div>
+  	</div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- getImage -->
+    <script src="js/getImage.js"></script>
+
+    <!-- window -->
+    <script>
+    window.onload = () => {
+    	// load an image on landing
+    	getImage();
+
+    	// add click listener to "new image" button
+    	document.querySelector( '#refreshImg' ).addEventListener( 'click', () => {
+    		$( '#gif' ).fadeOut( 300, () => {
+    			getImage();
+    		} );
+    	} );
+    };
+    </script>
+  </body>
+</html>
