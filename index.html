@@ -1,47 +1,168 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title></title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">s
+
+    <!-- FontAwesome Icons -->
+     <script src="https://use.fontawesome.com/454514cdba.js"></script>
+
+    <!-- jQuery and Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>Internet Therapy Dogs</title>
   </head>
   <body>
-  	<div class="container">
-  		<div class="title page-header text-center"><h1>Internet Therapy Dog Generator</h1></div>
-  		<div class="display">
-  			<div id="debug"><h3>DEBUG</h3>
-  				<p></p>
-  				<h5></h5>
-  				</div>
-  			<br>
-  			<div id="gif"></div>
-  			<br>
-  			<button id="refreshImg" class="btn btn-primary">Click for borks</button>
-  			<br>
-  			<div id="desc"></div>
-  		</div>
-  	</div>
+   <div id="wrapper">
+    <!-- Title -->
+    <div id="title">
+     <div class="title-container">
+      <div class="title-content">
+       <div id="loadingMessage">
+        <h1>Internet Therapy Dog Generator</h1></div>
+      </div>
+     </div>
+    </div>
 
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Media -->
+    <section id="media">
+     <div id="landingWrapper">
+      <div class="landing-button">
+       <button id="initialGetImg" class="btn btn-info">
+  				 <i class="fa fa-paw" aria-hidden="true"></i> Give me the doggos
+  			 </button>
+      </div>
+     </div>
+     <div class="container">
+      <div class="row">
+       <div class="col-xs-12">
+        <div class="display">
+         <div id="message"></div>
+         <div class="media-wrapper">
+          <video id="target" autoplay loop>
+  							<source src="" type="video/mp4" />
+  							Sorry, your browser doesn't support the HTML video tag.
+  						</video>
+         </div>
+        </div>
+       </div>
+      </div>
 
-    <!-- getImage -->
-    <script src="js/getImage.js"></script>
+      <div class="row">
+       <div class="col-xs-12">
+        <div id="controls" class="controls">
+         <button id="refreshImg" class="btn btn-primary">
+  					<i class="fa fa-paw" aria-hidden="true"></i> Again?
+  				</button>
 
-    <!-- window -->
-    <script>
-    window.onload = () => {
-    	// load an image on landing
-    	getImage();
+         <a id="tweet" href="" target="_blank">
+          <button class="btn btn-default"><i class="fa fa-twitter" aria-hidden="true"></i></button>
+         </a>
 
-    	// add click listener to "new image" button
-    	document.querySelector( '#refreshImg' ).addEventListener( 'click', () => {
-    		$( '#gif' ).fadeOut( 300, () => {
-    			getImage();
-    		} );
-    	} );
-    };
-    </script>
+         <a class="btn btn-default" role="button" data-toggle="collapse" href="#collapseInfo" aria-expanded="false" aria-controls="collapseInfo">
+    More info
+  </a>
+
+         <div class="row">
+          <div class="col-xs-12">
+           <div class="collapse" id="collapseInfo">
+              <div id="desc" class="well">
+               <form class="form-horizontal">
+                <div class="form-group">
+                 <label for="mp4Text" class="col-xs-2 control-label">MP4 URL:</label>
+  								<div class="col-xs-10">
+  									<input id="mp4Text" class="form-control" type="text" readonly>
+  								</div>
+  								               <label for="mobileText" class="col-xs-2 control-label">Mobile URL:</label>
+  								<div class="col-xs-10">
+  									<input id="mobileText" class="form-control" type="text" readonly>
+  								</div>
+  								               <label for="gifText" class="col-xs-2 control-label">GIF URL:</label>
+  								<div class="col-xs-10">
+  									<input id="gifText" class="form-control" type="text" readonly>
+  								</div>
+  								               <label for="webmText" class="col-xs-2 control-label">WebM URL:</label>
+  								<div class="col-xs-10">
+  									<input id="webmText" class="form-control" type="text" readonly>
+  								</div>
+                </div>
+               </form>
+
+  							 <a  href="https://twitter.com/intent/tweet?hashtags=InternetTherapyDog&related=freecodecamp&text=Look at the puppers! https://codepen.io/radotreyes/full/vJyzbp/" target="_blank">
+          <button class="btn btn-info"><i class="fa fa-twitter" aria-hidden="true"></i> Tweet about this page</button>
+         </a>
+              </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+
+
+     </div>
+    </section>
+
+    <!-- Info -->
+    <footer>
+     <div class="container">
+      <div class="sm">
+       <div class="row">
+        <div class="col-xs-12">
+         <div class="credits">
+          <p><small>Built by <a href="http://radotreyes.github.io" target="_blank"><u><strong>Reuben Reyes</u></strong></a>. © 2017.</small></p>
+         </div>
+         <div class="section-header"></div>
+        </div>
+        <div class="col-xs-12">
+         <a href="http://github.com/radotreyes">
+          <i class="fa fa-github" aria-hidden="true"></i>
+         </a>&ensp;&ensp;
+         <a href="http://linkedin.com/in/reubenreyes">
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+         </a>&ensp;&ensp;
+         <a href="https://twitter.com/bfcewf">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+         </a>&ensp;&ensp;
+         <a href="https://www.facebook.com/reuben.reyes.12">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+
+   <script src="js/getImage.js"></script>
+   <script type="text/javascript">
+   window.onload = () => {
+     /* load an image on landing */
+     $( '.display, #loading, #controls, #target' ).hide();
+
+     /* procedure to follow when loading first image after page landing */
+     document.querySelector( '#initialGetImg' ).addEventListener( 'click', () => {
+     $( '#landingWrapper' ).hide( () => {
+       $( '.display' ).show( () => {
+         transition();
+       } );
+     } );
+
+     } );
+
+     /* normal image loading procedure */
+     document.querySelector( '#refreshImg' ).addEventListener( 'click', () => {
+       transition();
+     } );
+   };
+   </script>
   </body>
 </html>
